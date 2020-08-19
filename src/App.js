@@ -6,26 +6,37 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shoppage/shoppage.component';
 import Header from './components/header/header.component.jsx';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null);
   
   useEffect(() => {
-    const unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      setCurrentUser(user);
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if(userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
+          });
+        })
+      }
+      setCurrentUser(userAuth);
     })
     console.log(currentUser);
-    // unsubscribe to the listener when unmounting
     return () => unsubscribeFromAuth()
-  });
+    // unsubscribe to the listener when unmounting
+  }, []);
 
   
 
   return (
     <div className="App">
       <Header currentUser={currentUser}/>
+  <div> welcom : {`${currentUser ? currentUser.id : '' }`}</div>
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage } />
