@@ -7,8 +7,20 @@
 
   .logo-container {
     height: 100%;
-    width: 70px;
+    width: 200px;
     padding: 25px;
+    font-size: 23px;
+
+    svg {
+      vertical-align: middle;
+    }
+    span {
+      font-weight: 700;
+      text-transform: capitalize;
+      padding-left: 15px;
+      vertical-align: middle;
+      color: rgb(17, 0, 255);
+    }
   }
 
   .options {
