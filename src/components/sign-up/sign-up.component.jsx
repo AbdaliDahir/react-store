@@ -53,7 +53,7 @@ const SignUp = () => {
     setSignUpState(prevState => ({...prevState, [name]: value }));
   };
 
-  const { displayName, email, password, confirmPassword } = signUpState;
+  // const { displayName, email, password, confirmPassword } = signUpState;
 
   return (
     <div className='sign-up'>

@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react'; 
+import React, {useEffect} from 'react'; 
 import './App.css';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -13,8 +13,8 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 
 function App(props) {
-
-  const { setCurrentUser } = props;
+  
+  
   
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
