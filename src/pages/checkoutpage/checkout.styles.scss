@@ -28,4 +28,31 @@
     margin-left: auto;
     font-size: 36px;
   }
+
+  .message {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    position: relative;
+    overflow: hidden;
+    margin: 4rem auto;
+    width: 100%;
+    max-width: 535px;
+    .head { 
+      color: #fff;
+      padding: 1rem 1.5rem;
+      background-color: #007bff ;
+    }
+    .body {
+      color: #000;
+      padding: 1rem 1.5rem;
+      ul {
+        padding-left: 0;
+        list-style: none;
+        li {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
 }

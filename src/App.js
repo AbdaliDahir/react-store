@@ -16,7 +16,6 @@ function App(props) {
 
   const { setCurrentUser } = props;
   
-
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth) {
@@ -37,11 +36,10 @@ function App(props) {
   }, []);
 
   
-
   return (
     <div className="App">
       <Header />
-  <div> welcom : {`${props.currentUser ? props.currentUser.id : '' }`}</div>
+      <div> welcom : {`${props.currentUser ? props.currentUser.id : '' }`}</div>
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage } />

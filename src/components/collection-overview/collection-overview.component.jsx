@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionPreview from '../../components/collection-preview/collection-preview';
+import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 import {connect} from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCollectionsItemsForView } from '../../redux/collections/collection.selectors';
