@@ -19,13 +19,13 @@ export const selectCollectionsItems = createSelector(
 
 export const selectCollectionsItemsForView = createSelector(
   [selectCollectionsItems],
-  collection => Object.keys(collection).map( key => collection[key])
+  collection => collection ? Object.keys(collection).map( key => collection[key]) : []
 )
 
 export const selectCollectionCat = collectionUrlParam =>
   createSelector(
     [selectCollectionsItems],
-    collection => collection[collectionUrlParam]
+    collection => (collection ? collection[collectionUrlParam] : null)
   );
 
 

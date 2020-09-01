@@ -1,11 +1,17 @@
-import SHOP_DATA from './shop.data';
+// import SHOP_DATA from './shop.data';
+import { CollectionActionTypes } from './collection.types';
 
 const INITIAL_SATATE = {
-  collectionData: SHOP_DATA
+  collectionData: null
 } 
 
 const collectionReducer = (state = INITIAL_SATATE, action) => {
   switch(action.type) {
+    case CollectionActionTypes.SET_COLLECTION_ITEMS:
+      return {
+        ...state,
+        collectionData: action.payload
+      }
     default:
       return state
   }
