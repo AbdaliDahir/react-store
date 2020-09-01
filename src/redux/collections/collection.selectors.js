@@ -28,7 +28,15 @@ export const selectCollectionCat = collectionUrlParam =>
     collection => (collection ? collection[collectionUrlParam] : null)
   );
 
+export const selectIsCollectionFetching = createSelector(
+  [selectCollection],
+  collection => collection.isFetching
+)
 
+export const selectIsCollectionLoaded = createSelector(
+  [selectCollection],
+  collection => !!collection.collectionData
+)
 // Problem with find Big O
 // export const selectCollectionCat = collectionUrlParam =>
 //   createSelector(

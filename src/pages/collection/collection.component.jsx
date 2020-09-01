@@ -6,6 +6,7 @@ import { selectCollectionCat } from '../../redux/collections/collection.selector
 import './collection.styles.scss';
 
 const CollectionPage = ({ collection }) => {
+  console.log(collection);
   const { title, items } = collection;
   return (
     <div className='collection-page'>
