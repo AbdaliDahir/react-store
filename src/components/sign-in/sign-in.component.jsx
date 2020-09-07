@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-
+import {connect} from "react-redux";
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-import {auth, signInWithGoogle} from '../../firebase/firebase.utils';
+// import {auth, signInWithGoogle} from '../../firebase/firebase.utils';
+import {
+  googleSignInStart,
+  emailSignInStart
+} from '../../redux/user/user.actions';
 
 import './sign-in.styles.scss';
 
-const SignIn = () => {
-
+const SignIn = (props) => {
+  const {googleSignInStart} = props;
   const [signInState, setSignInState] = useState({
     email: '',
     password: ''
@@ -17,20 +21,20 @@ const SignIn = () => {
     event.preventDefault();
     const { email, password} = signInState;
 
-    try {
-      await auth.signInWithEmailAndPassword(
-        email,
-        password
-      );
-      setSignInState(prevState => ({
-        ...prevState,
-        email: '',
-        password: ''
-      }));
+    // try {
+    //   await auth.signInWithEmailAndPassword(
+    //     email,
+    //     password
+    //   );
+    //   setSignInState(prevState => ({
+    //     ...prevState,
+    //     email: '',
+    //     password: ''
+    //   }));
 
-    } catch (error) {
-      console.error(error);
-    }
+    // } catch (error) {
+    //   console.error(error);
+    // }
 
   };
 
@@ -67,10 +71,19 @@ const SignIn = () => {
           required
         />
         <CustomButton type='submit'> Sign in </CustomButton>
-        <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign in with google </CustomButton>
+        <CustomButton type="button" onClick={googleSignInStart} isGoogleSignIn> Sign in with google </CustomButton>
       </form>
     </div>
   ); 
 }
 
-export default SignIn;
+const mapDispatchToProps = dispatch => ({
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password }))
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(SignIn);
