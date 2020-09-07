@@ -20,18 +20,18 @@ const INITIAL_STATE = {
       linkUrl: "shop/sneakers"
     },
     {
-      title: 'watchs',
+      title: 'womens',
       imageUrl: 'https://i.pinimg.com/564x/15/14/52/151452c67f1dcd28f1c486743be75d76.jpg',
       size: 'large',
       id: 4,
-      linkUrl: "shop/watchs"
+      linkUrl: "shop/womens"
     },
     {
-      title: 'jeans',
+      title: 'mens',
       imageUrl: 'https://i.pinimg.com/564x/22/fc/56/22fc56bf7efdbbe475be85042d267dac.jpg',
       size: 'large',
       id: 5,
-      linkUrl: "shop/jeans"
+      linkUrl: "shop/mens"
     }
   ]
 }
