@@ -3,35 +3,35 @@ const INITIAL_STATE = {
   homeCategories: [
     {
       title: 'hats',
-      imageUrl: 'https://images.unsplash.com/photo-1533055640609-24b498dfd74c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'https://i.pinimg.com/564x/d6/c9/0c/d6c90ce5c9795462191a22b94f2ea4ce.jpg',
       id: 1,
       linkUrl: "shop/hats"
     },
     {
       title: 'jackets',
-      imageUrl: 'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'https://i.pinimg.com/564x/c5/36/5a/c5365aa5f17340f8fb36d01ce8520aa9.jpg',
       id: 2,
       linkUrl: "shop/jackets"
     },
     {
       title: 'sneakers',
-      imageUrl: 'https://images.unsplash.com/photo-1514989940723-e8e51635b782?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80',
+      imageUrl: 'https://i.pinimg.com/564x/55/1c/da/551cdab5b42f82fc5d6ed0061f89b5e9.jpg',
       id: 3,
       linkUrl: "shop/sneakers"
     },
     {
-      title: 'womens',
-      imageUrl: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+      title: 'watchs',
+      imageUrl: 'https://i.pinimg.com/564x/15/14/52/151452c67f1dcd28f1c486743be75d76.jpg',
       size: 'large',
       id: 4,
-      linkUrl: "shop/womens"
+      linkUrl: "shop/watchs"
     },
     {
-      title: 'mens',
-      imageUrl: 'https://images.unsplash.com/photo-1536593998369-f0d25ed0fb1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
+      title: 'jeans',
+      imageUrl: 'https://i.pinimg.com/564x/22/fc/56/22fc56bf7efdbbe475be85042d267dac.jpg',
       size: 'large',
       id: 5,
-      linkUrl: "shop/mens"
+      linkUrl: "shop/jeans"
     }
   ]
 }

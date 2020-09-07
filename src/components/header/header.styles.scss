@@ -1,14 +1,18 @@
+$primary : rgb(17, 0, 255);
 .header {
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
-
+  margin-bottom: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 20px;
+  border-bottom: 4px solid $primary;
+  align-items: center;
   .logo-container {
     height: 100%;
     width: 200px;
-    padding: 25px;
     font-size: 23px;
 
     svg {
@@ -19,7 +23,7 @@
       text-transform: capitalize;
       padding-left: 15px;
       vertical-align: middle;
-      color: rgb(17, 0, 255);
+      color: $primary;
     }
   }
 

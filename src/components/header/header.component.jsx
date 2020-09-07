@@ -12,10 +12,12 @@ import { auth } from './../../firebase/firebase.utils';
 
 const Header = ({currentUser, hidden}) => (
   <div className='header'>
-    <Link className='logo-container' to='/'>
-      <Logo className='logo' />
-      <span> Sunest Shop</span>
-    </Link>
+    <div>
+      <Link className='logo-container' to='/'>
+        <Logo className='logo' />
+        <span> Sunest Shop</span>
+      </Link>
+    </div>
     <div className='options'>
       <Link className='option' to='/shop'>
         SHOP
