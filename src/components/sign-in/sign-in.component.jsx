@@ -11,7 +11,7 @@ import {
 import './sign-in.styles.scss';
 
 const SignIn = (props) => {
-  const {googleSignInStart} = props;
+  const {googleSignInStart, emailSignInStart} = props;
   const [signInState, setSignInState] = useState({
     email: '',
     password: ''
@@ -20,7 +20,7 @@ const SignIn = (props) => {
   const handleSubmit = async event => {
     event.preventDefault();
     const { email, password} = signInState;
-
+    emailSignInStart(email, password);
     // try {
     //   await auth.signInWithEmailAndPassword(
     //     email,
