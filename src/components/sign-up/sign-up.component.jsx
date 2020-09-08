@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
-
+import {connect} from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+// import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+import {signUpStart} from '../../redux/user/user.actions';
 
 import './sign-up.styles.scss';
 
-const SignUp = () => {
+const SignUp = (props) => {
+
+  const {signUpStart} = props;
 
   const [signUpState, setSignUpState] = useState({
     displayName: '',
@@ -18,33 +21,34 @@ const SignUp = () => {
 
   const handleSubmit = async event => {
     event.preventDefault();
-
     const { displayName, email, password, confirmPassword } = signUpState;
 
     if (password !== confirmPassword) {
       alert("passwords don't match");
       return;
+    } else {
+      signUpStart({email, password, displayName});
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
+    // try {
+    //   const { user } = await auth.createUserWithEmailAndPassword(
+    //     email,
+    //     password
+    //   );
 
-      await createUserProfileDocument(user, { displayName });
+    //   await createUserProfileDocument(user, { displayName });
 
-      setSignUpState(prevState => ({
-        ...prevState,
-        displayName: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      }));
+    //   setSignUpState(prevState => ({
+    //     ...prevState,
+    //     displayName: '',
+    //     email: '',
+    //     password: '',
+    //     confirmPassword: ''
+    //   }));
       
-    } catch (error) {
-      console.error(error);
-    }
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   const handleChange = event => {
@@ -98,4 +102,8 @@ const SignUp = () => {
   );
 }
 
-export default SignUp;
+const mapDispatchToProps = dispatch => ({
+  signUpStart: UserInfo => dispatch(signUpStart(UserInfo))
+})
+
+export default connect(null,mapDispatchToProps)(SignUp);

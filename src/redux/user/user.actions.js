@@ -5,9 +5,24 @@ export const setCurrentUser = user => ({
   payload: user
 });
 
+
+/*************************
+ * ***********************
+ *   Google Sign IN
+ * ***********************
+ * ***********************
+*/
+
 export const googleSignInStart = () => ({
   type: UserActionTypes.GOOGLE_SIGN_IN_START
 });
+
+/********************************************
+ * ******************************************
+ *   Sign In Succ/Failer for Email & Google
+ * ******************************************
+ * ******************************************
+*/
 
 export const signInSuccess = user => ({
   type: UserActionTypes.SIGN_IN_SUCCESS,
@@ -19,14 +34,34 @@ export const signInFailure = error => ({
   payload: error
 });
 
+/*************************
+ * ***********************
+ *     Email Sign In
+ * ***********************
+ * ***********************
+*/
+
 export const emailSignInStart = emailAndPassword => ({
   type: UserActionTypes.EMAIL_SIGN_IN_START,
   payload: emailAndPassword
 });
 
+/*************************
+ * ***********************
+ *    Check Session
+ * ***********************
+ * ***********************
+*/
 export const checkUserSession = () => ({
   type: UserActionTypes.CHECK_USER_SESSION
 });
+
+/*************************
+ * ***********************
+ *     Sign Out
+ * ***********************
+ * ***********************
+*/
 
 export const signOutStart = () => ({
   type: UserActionTypes.SIGN_OUT_START
@@ -41,6 +76,12 @@ export const signOutFailure = error => ({
   payload: error
 });
 
+/*************************
+ * ***********************
+ *     Sign Up
+ * ***********************
+ * ***********************
+*/
 export const signUpStart = userCredentials => ({
   type: UserActionTypes.SIGN_UP_START,
   payload: userCredentials
